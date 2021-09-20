@@ -4,6 +4,28 @@ Ship logs from fly to other providers using [NATS](https://docs.nats.io/) and [V
 
 Here we have some vector configs and a nats client (\`fly-logs\`), along side a wrapper script to run it all, that will subscribe to a log stream of your organisations logs, and ship it to various providers.
 
+# Getting Started
+
+1) Clone this repository
+
+2) Create the log shipper app in your Fly org:
+
+```bash
+flyctl init --name log-shipper-$ENVIRONMENT --import fly.$ENVIRONMENT.toml --dockerfile
+```
+
+3) Set secrets for the log shipper app:
+
+```bash
+flyctl secrets set --config fly.$ENVIRONMENT.toml ORG=$ORG ACCESS_TOKEN=$ACCESS_TOKEN DATADOG_API_KEY=$DATADOG_API_KEY
+```
+
+4) Deploy the log shipper app:
+
+```bash
+flyctl deploy --config fly.$ENVIRONMENT.toml
+```
+
 # Configuration
 
 Create a new Fly app based on this Dockerfile and configure using the following secrets:
