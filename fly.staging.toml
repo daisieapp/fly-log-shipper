@@ -1,14 +1,18 @@
-# fly.toml file generated for log-shipper on 2021-05-24T22:46:08+02:00
+# fly.toml file generated for log-shipper-staging 2021-05-24T22:46:08+02:00
 
-app = "fly-log-shipper-example"
+app = "log-shipper-staging"
 
 kill_signal = "SIGINT"
 kill_timeout = 5
 
+[env]
+  ORG = ""
+  ACCESS_TOKEN = ""
+  DATADOG_API_KEY = ""
+
 [experimental]
   allowed_public_ports = []
   auto_rollback = true
-
 
 [metrics]
   port = 9598
