@@ -1,6 +1,6 @@
 # fly.toml file generated for log-shipper-dev 2021-05-24T22:46:08+02:00
 
-app = "log-shipper-dev"
+app = "selleck-log-shipper-dev"
 
 kill_signal = "SIGINT"
 kill_timeout = 5

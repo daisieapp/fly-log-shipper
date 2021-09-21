@@ -11,7 +11,7 @@ Here we have some vector configs and a nats client (\`fly-logs\`), along side a 
 2) Create the log shipper app in your Fly org:
 
 ```bash
-flyctl init --name log-shipper-$ENVIRONMENT --import fly.$ENVIRONMENT.toml --dockerfile
+flyctl init --name selleck-log-shipper-$ENVIRONMENT --import fly.$ENVIRONMENT.toml --dockerfile
 ```
 
 3) Set secrets for the log shipper app:
@@ -36,7 +36,7 @@ Create a new Fly app based on this Dockerfile and configure using the following 
 | -------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `ORG`          | Organisation slug                                                                                                |
 | `ACCESS_TOKEN` | Fly personal access token                                                                                        |
-| `SUBJECT`        | Subject to subscribe to. See [[NATS]] below (defaults to `logs.>`)                                             |
+| `SUBJECT`      | Subject to subscribe to. See [[NATS]] below (defaults to `logs.>`)                                               |
 | `QUEUE`        | Arbitrary queue name if you want to run multiple log processes for HA and avoid duplicate messages being shipped |
 
 ## Provider configuration
